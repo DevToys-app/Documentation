@@ -1,0 +1,5 @@
+[submodule "submodule/DevToys"]
+	path = submodule/DevToys
+	url = https://github.com/DevToys-app/DevToys.git
+	branch = main
+	ignore = dirty
