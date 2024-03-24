@@ -1,0 +1,114 @@
+- name: Introduction
+  href: introduction.md
+- name: Extension Development
+  items:
+    - name: Getting Started
+      items:
+      - name: Setup
+        href: extension-development/getting-started/setup.md
+      - name: Create a minimal extension
+        href: extension-development/getting-started/create-an-extension.md
+      - name: Debug an extension
+        href: extension-development/getting-started/debug-an-extension.md
+      - name: Publish
+        href: extension-development/getting-started/publish.md
+    - name: Guidelines
+      items:
+      - name: Command Line tools
+        href: extension-development/guidelines/command-line-tool.md
+      - name: GUI tools
+        items:
+        - name: Create a custom icon
+          href: extension-development/guidelines/UX/create-custom-icon.md
+        - name: Create a group
+          href: extension-development/guidelines/UX/create-a-group.md
+        - name: Create a tool with a GUI
+          href: extension-development/guidelines/UX/create-a-tool-with-a-gui.md
+        - name: UI components
+          items:
+          - name: Basic input
+            items:
+            - name: Button
+              href: extension-development/guidelines/UX/basic-input/button.md
+            - name: Drop Down Button
+              href: extension-development/guidelines/UX/basic-input/drop-down-button.md
+            - name: Select Drop Down List
+              href: extension-development/guidelines/UX/basic-input/select-drop-down-list.md
+            - name: Toggle Switch
+              href: extension-development/guidelines/UX/basic-input/switch.md
+            - name: File Selector
+              href: extension-development/guidelines/UX/basic-input/file-selector.md
+            - name: Setting & Setting group
+              href: extension-development/guidelines/UX/basic-input/setting.md
+          - name: Collections
+            items:
+            - name: Data Grid
+              href: extension-development/guidelines/UX/collections/data-grid.md
+            - name: List
+              href: extension-development/guidelines/UX/collections/list.md
+          - name: Dialogs
+            items:
+            - name: Modal dialog
+              href: extension-development/guidelines/UX/dialogs/modal-dialog.md
+          - name: Layout
+            items:
+            - name: Card
+              href: extension-development/guidelines/UX/layout/card.md
+            - name: Grid
+              href: extension-development/guidelines/UX/layout/grid.md
+            - name: Split Grid
+              href: extension-development/guidelines/UX/layout/split-grid.md
+            - name: Stack
+              href: extension-development/guidelines/UX/layout/stack.md
+            - name: Wrap
+              href: extension-development/guidelines/UX/layout/wrap.md
+          - name: Status & info
+            items:
+            - name: Icon
+              href: extension-development/guidelines/UX/status-info/icon.md
+            - name: Image Viewer
+              href: extension-development/guidelines/UX/status-info/image-viewer.md
+            - name: Info Bar
+              href: extension-development/guidelines/UX/status-info/info-bar.md
+            - name: Label
+              href: extension-development/guidelines/UX/status-info/label.md
+            - name: Progress Bar
+              href: extension-development/guidelines/UX/status-info/progress-bar.md
+            - name: Progress Ring
+              href: extension-development/guidelines/UX/status-info/progress-ring.md
+          - name: Text
+            items:
+            - name: Singleline Text Input
+              href: extension-development/guidelines/UX/text/singleline-text-input.md
+            - name: Multiline Text Input
+              href: extension-development/guidelines/UX/text/multiline-text-input.md
+            - name: Number Input
+              href: extension-development/guidelines/UX/text/number-input.md
+            - name: Password Input
+              href: extension-development/guidelines/UX/text/password-input.md
+            - name: Diff Text Input
+              href: extension-development/guidelines/UX/text/diff-text-input.md
+          - name: Other
+            items:
+            - name: Web View
+              href: extension-development/guidelines/UX/other/web-view.md
+        - name: Support Smart Detection
+          href: extension-development/guidelines/UX/support-smart-detection.md
+      - name: Use settings
+        href: extension-development/guidelines/use-settings.md
+      - name: Use files
+        href: extension-development/guidelines/use-files.md
+      - name: Performance
+        href: extension-development/guidelines/performance.md
+      - name: Do & Don't
+        href: extension-development/guidelines/do-and-dont.md
+    - name: Samples and Tutorials
+      items:
+      - name: Hello World
+        href: extension-development/samples-tutorials/hello-world.md
+- name: Administrating DevToys
+  items:
+  - name: Installation
+    href: sysadmin/installation.md
+  - name: Extension Management
+    href: sysadmin/extension-management.md

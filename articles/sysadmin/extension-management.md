@@ -1,0 +1,1 @@
+todo: explain where extensions are installed. Where are logs stored. Where are settings stored.
