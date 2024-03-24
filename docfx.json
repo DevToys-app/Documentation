@@ -25,7 +25,9 @@
             "_site/**",
             "node_modules/**",
             "submodule/**/*.{md,yml}",
-            "README.md"
+            "README.md",
+            "LICENSE.md",
+            "CODE-OF-CONDUCT.md"
           ]
         }
       ],
