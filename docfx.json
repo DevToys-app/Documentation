@@ -1,0 +1,56 @@
+{
+    "metadata": [
+      {
+        "src": [
+          {
+            "files": [
+              "submodule/DevToys/**/DevToys.API.csproj"
+            ]
+          }
+        ],
+        "dest": "api"
+      }
+    ],
+    "build": {
+      "xref": [
+        "https://learn.microsoft.com/en-us/dotnet/.xrefmap.json",
+        "https://docs.sixlabors.com/xrefmap.yml"
+      ],
+      "content": [
+        {
+          "files": [
+            "**/*.{md,yml}"
+          ],
+          "exclude": [
+            "_site/**",
+            "node_modules/**",
+            "submodule/**/*.{md,yml}",
+            "README.md"
+          ]
+        }
+      ],
+      "resource": [
+        {
+          "files": [
+            "**/assets/**"
+          ]
+        }
+      ],
+      "output": "_site",
+      "globalMetadata": {
+        "_appName": "DevToys",
+        "_appTitle": "DevToys",
+        "_appLogoPath": "assets/logo.svg",
+        "_enableSearch": true,
+        "pdf": false,
+        "_lang": "end-us",
+        "_gitContribute": {
+          "branch": "main"
+        }
+      },
+      "template": [
+        "default",
+        "modern"
+      ]
+    }
+  }
