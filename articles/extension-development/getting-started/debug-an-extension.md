@@ -11,21 +11,34 @@ Before you can debug your extension, there’s a one-time configuration you need
 1. Paste the following JSON into this file:
    ```json
     {
+      "$schema": "https://json.schemastore.org/launchsettings.json",
       "profiles": {
-        "DevToys": {
+        "DevToys GUI": {
           "commandName": "Executable",
-          "executablePath": "%DevToysDebugEntryPoint%",
-          "commandLineArgs": "--extraplugin: \"$(TargetDir)\""
+          "executablePath": "%DevToysGuiDebugEntryPoint%",
+          "environmentVariables": {
+            "EXTRAPLUGIN": "$(TargetDir)"
+          }
+        },
+        "DevToys CLI": {
+          "commandName": "Executable",
+          "executablePath": "%DevToysCliDebugEntryPoint%",
+          "commandLineArgs": "",
+          "environmentVariables": {
+            "EXTRAPLUGIN": "$(TargetDir)"
+          }
         }
       }
     }
    ```
 
-Assuming you’ve correctly set the `DevToysDebugEntryPoint` environment variable as per the [Setup](setup.md) steps, this JSON configuration will enable automatic startup of DevToys and pass your extension as an argument.
+Assuming you've correctly set the `DevToysGuiDebugEntryPoint` and `DevToysCliDebugEntryPoint` environment variable as per the [Setup](setup.md) steps, this JSON configuration will enable automatic startup of **DevToys** or **DevToys CLI** and pass your extension as an argument.
 
 ## Build & Run
 
 Now comes the exciting part! Once the above steps are completed, you should be able to press `F5` in your editor (whether it’s **Visual Studio**, **Visual Studio Code**, or **JetBrains Rider**) to start the debugger. Your project will build, then DevToys will start, and your extension will be loaded. The **My Extension** tool should be available in the list of tools. You can place a breakpoint in the extension, such as in the `GetFontDefinitionsAsync` method or `View` property, and your editor should pause the execution when invoked.
+
+To debug a [command line tool](../guidelines/command-line-tool.md), use the `DevToys CLI` startup configuration. Change the `commandLineArgs` in your **launchSettings.json** to invoke the command and options you created.
 
 ### Hot Reload
 

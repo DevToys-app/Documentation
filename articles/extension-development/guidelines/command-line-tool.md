@@ -320,3 +320,29 @@ Some DevToys MEF services are not supported in CLI tool, such as:
 - @"DevToys.Api.IClipboard"
 - @"DevToys.Api.IThemeListener"
 - @"DevToys.Api.IFontProvider"
+
+## Debugging a command line tool
+
+To debug a command line tool, use the `DevToys CLI` startup configuration, as defined in [Debug and extension](../getting-started/debug-an-extension.md). Change the `commandLineArgs` in your **launchSettings.json** to invoke the command and options you created. For example:
+```json
+ {
+   "$schema": "https://json.schemastore.org/launchsettings.json",
+   "profiles": {
+     "DevToys GUI": {
+       "commandName": "Executable",
+       "executablePath": "%DevToysGuiDebugEntryPoint%",
+       "environmentVariables": {
+         "EXTRAPLUGIN": "$(TargetDir)"
+       }
+     },
+     "DevToys CLI": {
+       "commandName": "Executable",
+       "executablePath": "%DevToysCliDebugEntryPoint%",
+       "commandLineArgs": "mytool --input \"hello world\"",
+       "environmentVariables": {
+         "EXTRAPLUGIN": "$(TargetDir)"
+       }
+     }
+   }
+ }
+```
