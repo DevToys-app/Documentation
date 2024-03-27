@@ -1,6 +1,6 @@
 # Introduction
 
-DevToys 2.0 comes with an SDK that empowers you to create extensions. you to create and publish your own extensions for DevToys, expanding its functionality and making it an even more versatile tool for developers. The SDK is compatible with Windows, macOS, and Linux, making it accessible to a wide range of developers.
+DevToys 2.0 comes with an SDK that empowers you to create extensions. You to create and publish your own extensions for DevToys, expanding its functionality and making it an even more versatile tool for developers. Possibilities are infinite, giving a true meaning to a Swiss Army knife for Developer. The SDK is compatible with Windows, macOS, and Linux, making it accessible to a wide range of developers.
 The DevToys 2.0 SDK comes with a comprehensive set of Extension APIs. These APIs abstract some platform-specific approaches, such as user interface design and hard drive access, making it easier for you to focus on creating great cross-platform tools.
 
 This documentation will guide you through the following:

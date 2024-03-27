@@ -1,5 +1,7 @@
 # Create a tool with a GUI
 
+## Overview
+
 DevToys 2.0 allows you to create your own tool with a GUI. A dedicated UI API is part of `DevToys.Api`.
 
 Making a UI in a DevToys tool is pretty straightforward. While a DevToys tool is coded in C#, runs natively on the computer and have access to the whole operating system's features, DevToys' UI is rendered using web technology thanks to [Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid).

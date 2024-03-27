@@ -75,6 +75,10 @@ internal sealed class MyGuiTool : IGuiTool
             _multiLineTextInput.Highlight(
                 new UIHighlightedTextSpan(0, 5, UIHighlightedTextSpanColor.Red),
                 new UIHighlightedTextSpan(12, 5, UIHighlightedTextSpanColor.Green));
+
+            _multiLineTextInput.HoverTooltip(
+                new UIHoverTooltip(0, 5, "Hello world!"),
+                new UIHoverTooltip(12, 5, "This is a tooltip"));
         }
     }
 }

@@ -27,7 +27,7 @@ To embed a font in a .NET project, open your project file (`*.csproj`) with a te
 </Project>
 ```
 
-## Implement IResourceAssemblyIdentifier
+## Define a Resource Assembly Identifier
 
 To provide a custom font, you can implement @"DevToys.Api.IResourceAssemblyIdentifier" and expose it to [MEF](https://learn.microsoft.com/en-us/dotnet/framework/mef/) using @"System.ComponentModel.Composition.ExportAttribute" attribute.
 

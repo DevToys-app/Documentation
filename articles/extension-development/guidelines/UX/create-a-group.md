@@ -8,7 +8,7 @@ In DevToys, tools are often part of a group. Group are displayed in the navigati
 
 A set of pre-defined groups are available in @"DevToys.Api.PredefinedCommonToolGroupNames".
 
-## Implement GuiToolGroup
+## Define a Gui Tool Group
 
 To define a new group, you can implement @"DevToys.Api.GuiToolGroup" and expose it to [MEF](https://learn.microsoft.com/en-us/dotnet/framework/mef/) using @"System.ComponentModel.Composition.ExportAttribute" attribute.
 
