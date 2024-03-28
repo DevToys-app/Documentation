@@ -1,6 +1,6 @@
 # Setting & Setting group
 
-DevToys has an API to support settings. Settings are often simple values that are persisted on the hard drive so they DevToys can restore their state after restarting. See [Use settings](../../use-settings.md) for more information.
+DevToys has an API to support settings. Settings are often simple values that are persisted on the hard drive so DevToys can restore their state after restarting. See [Use settings](../../use-settings.md) for more information.
 
 You can display a setting [card](../layout/card.md) using the @"DevToys.Api.GUI.Setting" or @"DevToys.Api.GUI.SettingGroup" static methods, which produces a @"DevToys.Api.IUISetting" or @"DevToys.Api.IUISettingGroup". Each of these controls can handle settings automatically, simplifying the support of @System.Boolean and @System.Enum settings.
 

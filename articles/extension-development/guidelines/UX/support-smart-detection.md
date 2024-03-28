@@ -2,15 +2,15 @@
 
 ## Overview
 
-DevToys comes up with a feature called Smart Detection. It reads the content of the user clipboard and try to find what are the best tools that fits the data. For example, if the clipboard's text is a JSON, DevToys will try to suggest all the tools that takes a JSON as an input, such as the JSON Formatter.
+DevToys introduces a feature known as Smart Detection. This feature analyzes the content of the user’s clipboard and identifies the most suitable tools for the data. For instance, if the clipboard contains JSON text, DevToys will suggest all tools that accept JSON as input, such as the JSON Formatter.
 
-Suggested tools gets higlighted in the navigation bar with a light bulb icon.
+Suggested tools are highlighted in the navigation bar with a light bulb icon.
 ![DevToys - Navigation Bar - Smart Detection](assets/smart-detection.png)
 
-Clicking on a suggested tool will paste automatically the content of the clipboard to the tool, so it can use it as an input.
+Selecting a suggested tool will automatically paste the clipboard content into the tool for use as input.
 ![DevToys - JSON Formatter - Smart Detected input](assets/smart-detection-2.png)
 
-Finally, some tools will also have an embedded light bulb next to a read-only text box that allows the user to transfer the output of a tool to another one. This allows user to do some chained operation, such as formatting a JSON, then converting it to a Base64 text, then encoding it as a QR Code.
+Additionally, some tools have an embedded light bulb icon next to a read-only text box. This allows the user to transfer the output of one tool to another, enabling chained operations. For example, formatting a JSON, converting it to Base64 text, and then encoding it as a QR Code.
 ![DevToys - Transfer data using Smart Detection](assets/smart-detection-3.png)
 
 ## Settings
@@ -21,17 +21,17 @@ User can enable or disable `Smart Detection` in the app settings.
 
 ## How it works
 
-DevToys tools implementing @"DevToys.Api.IGuiTool" can register to a certain type of data that will be detected by the app through the clipboard or a read-only text box from a tool. For example, a tool can request to be highlighted specifically when a simple text is detected, or a JSON, an XML, an image, a file, or else.
+DevToys tools that implement @"DevToys.Api.IGuiTool" can register for specific data types that the app will detect via the clipboard or a read-only text box from a tool. For example, a tool can request to be highlighted when a simple text, JSON, XML, image, file, or other data type is detected.
 
-DevToys detects data types through @"DevToys.Api.IDataTypeDetector". A data type detector is a simple component that takes a raw data in input, tries to parse it partially or fully and returns whether it matches the expected format or not.
+DevToys identifies data types through @"DevToys.Api.IDataTypeDetector". A data type detector is a component that takes raw data as input, attempts to parse it (either partially or fully), and returns whether it matches the expected format.
 
 ## Predefined Data Types
 
-A set of pre-defined data types are available in @"DevToys.Api.PredefinedCommonDataTypeNames". The @"DevToys.Api.IDataTypeDetector" for these data types are built-in in DevToys, so you do not need to implement the detectors yourself.
+A set of predefined data types are available in @"DevToys.Api.PredefinedCommonDataTypeNames". The @"DevToys.Api.IDataTypeDetector" for these data types are built into DevToys, so there’s no need to implement the detectors yourself.
 
 ## Implementing a Data Type Detector
 
-In the example below, we will create a simple `HTML` file detector.
+In the following example, we’ll create a simple `HTML` file detector.
 
 ```csharp
 using DevToys.Api;
@@ -67,11 +67,11 @@ internal sealed partial class HtmlDataTypeDetector : IDataTypeDetector
 }
 ```
 
-The @"DevToys.Api.DataTypeNameAttribute" defines the name of the data type being detected by our detector, along with what data type it inherits from.
+The @"DevToys.Api.DataTypeNameAttribute" defines the name of the data type our detector is identifying, along with the data type it inherits from.
 
 ### Data Type inheritence
 
-Data type can inherits from others. When applying inheritence using the @"DevToys.Api.DataTypeNameAttribute.DataTypeBaseName" property, data type detectors are invoked in a logical order.
+Data types can inherit from others. When applying inheritance using the @"DevToys.Api.DataTypeNameAttribute.DataTypeBaseName" property, data type detectors are invoked in a logical order.
 
 ```mermaid
 flowchart LR
@@ -95,21 +95,21 @@ click H href "https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28deb
 click I href "https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/" _blank
 ```
 
-In our example with an `HTML file` detector, assuming that the user has a single file copied in the clipboard, the [Text](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/TextDataTypeDetector.cs), [Image](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/ImageDataTypeDetector.cs) and [Files](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/FilesDataTypeDetector.cs) detectors will be invoked in parallel. We expect that only the `Files detector` find a valid data, which is having one or many files in the clipboard. The `Files detector` will return a @"DevToys.Api.DataDetectionResult" that contains a strongly typed list of file, represented through an array of @"System.IO.FileInfo".
+In our `HTML file` detector example, assuming the user has a single file copied to the clipboard, the [Text](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/TextDataTypeDetector.cs), [Image](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/ImageDataTypeDetector.cs) and [Files](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/FilesDataTypeDetector.cs) detectors will be invoked concurrently. We expect only the `Files detector` to find valid data, i.e., one or more files in the clipboard. The `Files detector` will return a @"DevToys.Api.DataDetectionResult" containing a strongly typed list of files, represented as an array of @"System.IO.FileInfo".
 
-Continuing, the resulted `DataDetectionResult` will be passed to the inheriting detector, which is [File detector](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/FileDataTypeDetector.cs), through its `resultFromBaseDetector` parameter. This detector will use this parameter to detect [whether the clipboard contains a single file](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/FileDataTypeDetector.cs#L10-L11). If succeeded, it will then return a new @"DevToys.Api.DataDetectionResult" with a single @"System.IO.FileInfo".
+The resulting `DataDetectionResult` will be passed to the inheriting detector (the [File detector](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/FileDataTypeDetector.cs)), via its `resultFromBaseDetector` parameter. This detector will use this parameter to check [if the clipboard contains a single file](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/FileDataTypeDetector.cs#L10-L11). If succeeded, it will return a new @"DevToys.Api.DataDetectionResult" with a single @"System.IO.FileInfo".
 
-Finally, our `HTML File` detector and the [Image File](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/ImageFileDataTypeDetector.cs) detector will be invoked in parallel. Assuming that the `HTML File` detector finds the **_HTML_** file in the clipboard, DevToys will then suggest to the user every tools that declare supporting the `HTML File` data type by showing a light bulb next to them.
+Finally, our `HTML File` detector and the [Image File](https://github.com/DevToys-app/DevToys/blob/9213efbbdd576b1ea28debba8574a26cb581ab18/src/app/dev/DevToys.Blazor/BuiltInDataTypeDetectors/ImageFileDataTypeDetector.cs) will be invoked concurrently. Assuming the `HTML File` detector finds the **_HTML_** file in the clipboard, DevToys will suggest all tools that declare support for the HTML File data type by displaying a light bulb icon next to them.
 
 ### Do & Don't
 
-- **DO** perform a fast and lightweigh detection. Smart Detection is time sensitive.
-- **DO** assume that data from the clipboard can be massive, so try to bail out as soon as possible.
-- **DO** check on the `CancellationToken` regularly. It cancels within 2 seconds.
-- **DO** check on the size of a file before attempting to read it, and bail out if the file is large, as the detector may allocate a lot of memory and be slow to analyze the file.
-- **DO NOT** try to workaround when Smart Detection is disabled through the app settings. Respect the user's decision.
+- **DO** perform a quick and lightweight detection. Smart Detection is time-sensitive.
+- **DO** assume that clipboard data can be large, so try to bail out as soon as possible.
+- **DO** regularly check the `CancellationToken`. It cancels within 2 seconds.
+- **DO** check the size of a file before attempting to read it, and bail out if the file is large. Large files may cause the detector to allocate a lot of memory and slow down the file analysis.
+- **DO NOT** attempt to circumvent when Smart Detection is disabled through the app settings. Respect the user’s choice.
 - **DO NOT** create cycling inheritance.
-- **DO NOT** create a data type detector that detects multiple data types that are widly different from each other. Instead, create multiple data type detectors, one by data type.
+- **DO NOT** create a data type detector that detects multiple data types that are vastly different from each other. Instead, create multiple data type detectors, one for each data type.
 
 ## Handling Smart Detection in a GUI tool
 
