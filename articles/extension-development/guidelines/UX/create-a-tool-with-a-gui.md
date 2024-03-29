@@ -4,19 +4,19 @@
 
 DevToys 2.0 allows you to create your own tool with a GUI. A dedicated UI API is part of `DevToys.Api`.
 
-Making a UI in a DevToys tool is pretty straightforward. While a DevToys tool is coded in C#, runs natively on the computer and have access to the whole operating system's features, DevToys' UI is rendered using web technology thanks to [Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid).
+Creating a user interface within a DevToys tool is a straightforward process. Despite being coded in C#, running natively on the computer, and having access to the entire feature set of the operating system, DevToys’ UI is rendered using web technology thanks to [Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid).
 
 >[!NOTE]
 >On **Windows**, the UI is rendered with the built-in [Microsoft Edge WebView2](https://learn.microsoft.com/en-us/microsoft-edge/webview2/), based on [Chromium](https://www.chromium.org/Home/). On **macOS** and **Linux**, the UI is rendered with the built-in [WebKit](https://webkit.org/).
 >DevToys does **_not_** bundle the web engine like Electron apps. Instead, it uses the engine installed on the operated system.
 
-DevToys UI API is designed in a way that **_you do not need any knowledge of web development_** in order to create a beautiful and consistent user interface for your tool. The UI API provides access to a set of pre-built UI components with minimal customization options. This ensure a coherent and consistent design across all the tools in DevToys and make it very quick and easy to put together a great UI that works on every platform (Windows, MacOS, Linux).
+The DevToys UI API is designed such that **_no prior knowledge of web development is required_** to create a visually appealing and consistent user interface for your tool. The UI API provides access to a set of pre-built UI components with minimal customization options, ensuring a coherent and consistent design across all tools in DevToys. This makes it quick and easy to assemble a high-quality UI that is compatible with every platform (Windows, MacOS, Linux).
 
-Let's dive into how to make a tool with a UI in DevToys.
+Let’s delve into the process of creating a tool with a UI in DevToys.
 
 ## Define a GUI tool
 
-To create a tool with a UI, you can implement @"DevToys.Api.IGuiTool" and expose it to [MEF](https://learn.microsoft.com/en-us/dotnet/framework/mef/) using @"System.ComponentModel.Composition.ExportAttribute" attribute.
+To create a tool with a UI, implement the @"DevToys.Api.IGuiTool" and expose it to [MEF](https://learn.microsoft.com/en-us/dotnet/framework/mef/) using @"System.ComponentModel.Composition.ExportAttribute" attribute.
 
 ```csharp
 using DevToys.Api;
@@ -52,7 +52,7 @@ internal sealed class MyGuiTool : IGuiTool
 }
 ```
 
-The @"DevToys.Api.NameAttribute" is required and its value should be an unique name that stays internal. This name may appear in logs as it can help for debugging purposes.
+The @"DevToys.Api.NameAttribute" is mandatory and should be assigned a unique, internal name. This name may appear in logs and can assist with debugging.
 
 The @"DevToys.Api.ToolDisplayInformationAttribute" is also required and defines multiple information needed for the GUI tool:
 - **IconFontName**: Name of the font the contains the glyph to display in the navigation bar. The font name should be installed on the operating system, or [being shipped with the tool](create-custom-icon.md). The font [FluentSystemIcons](https://github.com/microsoft/fluentui-system-icons) is shipped with DevToys 2.0 and therefore is available to every extensions by default, on every operating systems.
