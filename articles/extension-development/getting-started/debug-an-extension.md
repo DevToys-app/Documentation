@@ -4,7 +4,7 @@ Building and debugging a DevToys extension is a straightforward process. This gu
 
 ## One-time configuration
 
-Before you can debug your extension, there’s a one-time configuration you need to complete:
+Before you can debug your extension, there's a one-time configuration you need to complete:
 
 1. In the project your created, add a new folder named **Properties**.
 1. In the **Properties** folder, create a new file named **launchSettings.json**.
@@ -36,7 +36,7 @@ Assuming you've correctly set the `DevToysGuiDebugEntryPoint` and `DevToysCliDeb
 
 ## Build & Run
 
-Now comes the exciting part! Once the above steps are completed, you should be able to press `F5` in your editor (whether it’s **Visual Studio**, **Visual Studio Code**, or **JetBrains Rider**) to start the debugger. Your project will build, then DevToys will start, and your extension will be loaded. The **My Extension** tool should be available in the list of tools. You can place a breakpoint in the extension, such as in the `GetFontDefinitionsAsync` method or `View` property, and your editor should pause the execution when invoked.
+Now comes the exciting part! Once the above steps are completed, you should be able to press `F5` in your editor (whether it's **Visual Studio**, **Visual Studio Code**, or **JetBrains Rider**) to start the debugger. Your project will build, then DevToys will start, and your extension will be loaded. The **My Extension** tool should be available in the list of tools. You can place a breakpoint in the extension, such as in the `GetFontDefinitionsAsync` method or `View` property, and your editor should pause the execution when invoked.
 
 To debug a [command line tool](../guidelines/command-line-tool.md), use the `DevToys CLI` startup configuration. Change the `commandLineArgs` in your **launchSettings.json** to invoke the command and options you created.
 

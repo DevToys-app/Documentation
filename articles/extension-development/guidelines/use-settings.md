@@ -1,10 +1,10 @@
-# Use Settings
+# Use settings
 
 DevToys tools, especially those with a GUI, often expose options that persist even after the app is restarted. This feature allows users to maintain the configuration of DevToys and its tools from the last session.
 
 ## Settings Provider
 
-@"DevToys.Api.ISettingsProvider" is a MEF service available for reading and writing settings. You can define a setting using @"DevToys.Api.SettingDefinition`1".  This service can be injected into a class using MEF’s @"System.ComponentModel.Composition.ImportAttribute" attribute.
+@"DevToys.Api.ISettingsProvider" is a MEF service available for reading and writing settings. You can define a setting using @"DevToys.Api.SettingDefinition`1".  This service can be injected into a class using MEF's @"System.ComponentModel.Composition.ImportAttribute" attribute.
 
 ```csharp
 using DevToys.Api;

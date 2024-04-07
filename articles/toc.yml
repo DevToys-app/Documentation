@@ -98,14 +98,8 @@
         href: extension-development/guidelines/use-settings.md
       - name: Use files
         href: extension-development/guidelines/use-files.md
-      - name: Performance
-        href: extension-development/guidelines/performance.md
       - name: Do & Don't
         href: extension-development/guidelines/do-and-dont.md
-    - name: Samples and Tutorials
-      items:
-      - name: Hello World
-        href: extension-development/samples-tutorials/hello-world.md
 - name: Administrating DevToys
   items:
   - name: Installation

@@ -1,16 +1,16 @@
 # Publish
 
-Have you developed an extension for DevToys and are ready to share it with the world? That’s fantastic! Publishing your extension is both simple and free.
+Have you developed an extension for DevToys and are ready to share it with the world? That's fantastic! Publishing your extension is both simple and free.
 
 ## Considerations when Release build
 
-DevToys’ extensibility is made possible through the [Managed Extensibility Framework (MEF)](https://learn.microsoft.com/en-us/dotnet/framework/mef/). MEF is excellent for desktop applications as it enables an app to dynamically load any .NET class library that implements specific interfaces used by DevToys for extensibility, without the main DevToys app needing prior knowledge of your extension.
+DevToys' extensibility is made possible through the [Managed Extensibility Framework (MEF)](https://learn.microsoft.com/en-us/dotnet/framework/mef/). MEF is excellent for desktop applications as it enables an app to dynamically load any .NET class library that implements specific interfaces used by DevToys for extensibility, without the main DevToys app needing prior knowledge of your extension.
 
 However, this flexibility comes with a significant caveat. Extensions are discovered through [Reflection](https://learn.microsoft.com/en-us/dotnet/framework/reflection-and-codedom/reflection), which has implications for Release builds:
 1. Exercise caution when using [trimming](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/fixing-warnings), as Reflection can be affected by it.
-1. [Native AOT](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/) can introduce a lot of complications. It can modify your Class Library such that DevToys won’t locate your components via Reflection. You’ll also need to compile and release a distinct binary file for each platform you aim to target (Windows, macOS, Linux).
+1. [Native AOT](https://learn.microsoft.com/en-us/dotnet/core/deploying/native-aot/) can introduce a lot of complications. It can modify your Class Library such that DevToys won't locate your components via Reflection. You'll also need to compile and release a distinct binary file for each platform you aim to target (Windows, macOS, Linux).
 
-Unless there’s a compelling reason to use AOT and trimming, we advise against using trimming and AOT when building an extensions for DevToys in Release mode.
+Unless there's a compelling reason to use AOT and trimming, we advise against using trimming and AOT when building an extensions for DevToys in Release mode.
 
 ## Packing an extension
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-DevToys introduces a feature known as Smart Detection. This feature analyzes the content of the user’s clipboard and identifies the most suitable tools for the data. For instance, if the clipboard contains JSON text, DevToys will suggest all tools that accept JSON as input, such as the JSON Formatter.
+DevToys introduces a feature known as Smart Detection. This feature analyzes the content of the user's clipboard and identifies the most suitable tools for the data. For instance, if the clipboard contains JSON text, DevToys will suggest all tools that accept JSON as input, such as the JSON Formatter.
 
 Suggested tools are highlighted in the navigation bar with a light bulb icon.
 ![DevToys - Navigation Bar - Smart Detection](assets/smart-detection.png)
@@ -27,11 +27,11 @@ DevToys identifies data types through @"DevToys.Api.IDataTypeDetector". A data t
 
 ## Predefined Data Types
 
-A set of predefined data types are available in @"DevToys.Api.PredefinedCommonDataTypeNames". The @"DevToys.Api.IDataTypeDetector" for these data types are built into DevToys, so there’s no need to implement the detectors yourself.
+A set of predefined data types are available in @"DevToys.Api.PredefinedCommonDataTypeNames". The @"DevToys.Api.IDataTypeDetector" for these data types are built into DevToys, so there's no need to implement the detectors yourself.
 
 ## Implementing a Data Type Detector
 
-In the following example, we’ll create a simple `HTML` file detector.
+In the following example, we'll create a simple `HTML` file detector.
 
 ```csharp
 using DevToys.Api;
@@ -107,7 +107,7 @@ Finally, our `HTML File` detector and the [Image File](https://github.com/DevToy
 - **DO** assume that clipboard data can be large, so try to bail out as soon as possible.
 - **DO** regularly check the `CancellationToken`. It cancels within 2 seconds.
 - **DO** check the size of a file before attempting to read it, and bail out if the file is large. Large files may cause the detector to allocate a lot of memory and slow down the file analysis.
-- **DO NOT** attempt to circumvent when Smart Detection is disabled through the app settings. Respect the user’s choice.
+- **DO NOT** attempt to circumvent when Smart Detection is disabled through the app settings. Respect the user's choice.
 - **DO NOT** create cycling inheritance.
 - **DO NOT** create a data type detector that detects multiple data types that are vastly different from each other. Instead, create multiple data type detectors, one for each data type.
 

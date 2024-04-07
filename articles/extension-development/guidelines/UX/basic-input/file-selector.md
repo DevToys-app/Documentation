@@ -55,6 +55,8 @@ internal sealed class MyGuiTool : IGuiTool
 }
 ```
 
+For more information on what is @"DevToys.Api.SandboxedFileReader", see [use files](../../use-files.md).
+
 The code above produces the following UI:
 
 ![DevToys - My Tool - File Selector](assets/file-selector.png)

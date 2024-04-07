@@ -4,7 +4,7 @@
 
 DevToys 2.0 allows you to create your own tool with a GUI. A dedicated UI API is part of `DevToys.Api`.
 
-Creating a user interface within a DevToys tool is a straightforward process. Despite being coded in C#, running natively on the computer, and having access to the entire feature set of the operating system, DevToys’ UI is rendered using web technology thanks to [Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid).
+Creating a user interface within a DevToys tool is a straightforward process. Despite being coded in C#, running natively on the computer, and having access to the entire feature set of the operating system, DevToys' UI is rendered using web technology thanks to [Blazor Hybrid](https://learn.microsoft.com/en-us/aspnet/core/blazor/hybrid).
 
 >[!NOTE]
 >On **Windows**, the UI is rendered with the built-in [Microsoft Edge WebView2](https://learn.microsoft.com/en-us/microsoft-edge/webview2/), based on [Chromium](https://www.chromium.org/Home/). On **macOS** and **Linux**, the UI is rendered with the built-in [WebKit](https://webkit.org/).
@@ -12,7 +12,7 @@ Creating a user interface within a DevToys tool is a straightforward process. De
 
 The DevToys UI API is designed such that **_no prior knowledge of web development is required_** to create a visually appealing and consistent user interface for your tool. The UI API provides access to a set of pre-built UI components with minimal customization options, ensuring a coherent and consistent design across all tools in DevToys. This makes it quick and easy to assemble a high-quality UI that is compatible with every platform (Windows, MacOS, Linux).
 
-Let’s delve into the process of creating a tool with a UI in DevToys.
+Let's delve into the process of creating a tool with a UI in DevToys.
 
 ## Define a GUI tool
 
