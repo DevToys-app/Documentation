@@ -1,0 +1,48 @@
+{{!Licensed to the .NET Foundation under one or more agreements. The .NET Foundation licenses this file to you under the MIT license.}}
+
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img alt="DevToys logo" class="logo-image" height="32" src="/styles/images/logo.svg" width="32">
+            DevToys
+        </a>
+
+        <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </a>
+
+        <div class="collapse navbar-collapse justify-content-end" id="main-navbar">
+            <ul class="navbar-nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blog">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="doc">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="download">Download</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/DevToys-app"><i class="bi bi-github" title="GitHub"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container border-top">
+        <div id="navbar">
+            <!-- DocFX nav bar will be injected here automatically -->
+        </div>
+
+        <form class="navbar-form navbar-right justify-content-end" role="search" id="search">
+            <div class="form-group">
+                <input type="text" class="form-control mt-2" id="search-query" placeholder="{{__global.search}}" autocomplete="off">
+            </div>
+        </form>
+    </div>
+</nav>

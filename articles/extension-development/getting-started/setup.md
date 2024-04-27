@@ -62,7 +62,7 @@ We recommend you use [**JetBrains Rider**](https://www.jetbrains.com/rider/) as 
 
 To debug an extension seamlessly, you need to set a specific environment variable on your system.
 Follow these steps:
-1. Locate `DevToys` and `DevToys.CLI` programs on your computer. Keep this path handy for a later step.
+1. Locate `DevToys` and `DevToys.CLI` programs on your computer. It is common to find it in `/usr/bin/devtoys` and `/usr/bin/devtoys.cli`. Keep this path handy for a later step.
 1. Launch the Terminal application.
 1. Enter the command `nano ~/.bashrc`.
 1. Within the opened `nano` editor, append the following line at the end of the document to define the `DevToysGuiDebugEntryPoint` and `DevToysCliDebugEntryPoint` variables.

@@ -42,8 +42,9 @@
       "globalMetadata": {
         "_appName": "DevToys",
         "_appTitle": "DevToys",
-        "_appLogoPath": "assets/logo.svg",
         "_enableSearch": true,
+        "_disableBreadcrumb": true,
+        "_disableSideFilter": true,
         "pdf": false,
         "_lang": "end-us",
         "_gitContribute": {
@@ -52,7 +53,7 @@
       },
       "template": [
         "default",
-        "modern"
+        "template"
       ]
     }
   }

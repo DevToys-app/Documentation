@@ -1,0 +1,268 @@
+@import url(bootstrap/css/bootstrap.min.css);
+@import url(bootstrap-icons/font/bootstrap-icons.min.css);
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+
+    --link-color: #a875d7;
+}
+
+* {
+    /* Font Families */
+    --font-family-fallback: -apple-system, /* San Francisco in Safari (on Mac OS X and iOS); Neue Helvetica and Lucida Grande on older versions of Mac OS X. */
+                            BlinkMacSystemFont, /* Equivalent of -apple-system, for Chrome on Mac OS X. */
+                            "Segoe UI", /* Windows (Vista+) and Windows Phone. */
+                            "Roboto", /* Android (Ice Cream Sandwich (4.0)+) and Chrome OS. */
+                            "Ubuntu", /* all versions of Ubuntu. */
+                            system-ui, /* Default UI font on a given platform. */
+                            'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fallback */
+
+    --font-family-text: "Segoe UI Variable Text", "Seoge UI Variable Static Text", var(--font-family-fallback);
+    --font-family-small: "Segoe UI Variable Small", "Seoge UI Variable Static Small", var(--font-family-fallback);
+    --font-family-display: "Segoe UI Variable Display", "Seoge UI Variable Static Display", var(--font-family-fallback);
+
+    font-family: var(--font-family-text);
+}
+
+html {
+    color-scheme: dark only;
+}
+
+body {
+    background-color: #202020;
+}
+
+.collapsing {
+  text-align: unset !important;
+}
+
+.navbar-collapse {
+  margin: unset !important;
+}
+
+header {
+  background-color: hsla(0, 0%, 13%, .8);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+}
+
+.navbar .navbar-nav {
+  display: flex;
+}
+
+.navbar .form-control {
+  background-color: transparent;
+  border-color: var(--bs-dark-text-emphasis);
+}
+
+.navbar .form-control::placeholder {
+  color: var(--bs-navbar-color);
+}
+
+#navbar .navbar-nav {
+  flex-direction: row;
+}
+
+#navbar .navbar-nav .nav-link {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
+}
+
+footer {
+  border-top: 1px solid var(--bs-dark-text-emphasis);
+  background-color: #202020;
+  position: relative;
+}
+
+.top-space {
+    margin-top: 128px;
+}
+
+.sidenav, .sidefilter, .sidetoc, .toc {
+  background-color: transparent !important;
+  border: 0;
+}
+
+.toc {
+  padding-bottom: 4px;
+}
+
+.expand-stub {
+  left: -14px;
+}
+
+.bs-docs-sidenav {
+  display: unset !important;
+}
+
+ul > li > i .bi {
+  font-size: 24px;
+}
+
+i .bi, .expand-stub, li::marker {
+  color: var(--link-color);
+}
+
+a, a:hover, a:active, a:visited {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.affix ul > li.active > a,
+.affix ul > li.active > a:before,
+.affix ul > li.active > a:hover {
+  color: var(--link-color);
+}
+
+.affix ul > li > a,
+.affix ul > li > a:before {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.affix ul > li > a:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.toc .nav > li.active > a,
+.toc .nav > li.active > a:hover,
+.toc .nav > li.active > a:active,
+.toc .nav > li.active > a:visited {
+  color: var(--link-color);
+}
+
+.toc .nav > li > a,
+.toc .nav > li > a:active,
+.toc .nav > li > a:visited {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.toc .nav > li > a:hover{
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.toc .nav > li.active > .expand-stub::before,
+.toc .nav > li.in > .expand-stub::before,
+.toc .nav > li.in.active > .expand-stub::before,
+.toc .nav > li.filtered > .expand-stub::before {
+    font-family:bootstrap-icons!important;
+    font-style:normal;
+    font-weight:800!important;
+    font-variant:normal;
+    font-size: 16px;
+    content: "\f282";
+}
+
+.toc .nav > li > .expand-stub::before,
+.toc .nav > li.active > .expand-stub::before {
+    font-family:bootstrap-icons!important;
+    font-style:normal;
+    font-weight:800!important;
+    font-variant:normal;
+    font-size: 16px;
+    content: "\f285";
+}
+
+.toc .level1 > li,
+.toc .level2,
+.toc ul,
+.sideaffix,
+.sideaffix > div.contribution > ul > li > a.contribution-link,
+.affix h5 {
+  font-size: var(--bs-body-font-size) !important;
+}
+
+.tabGroup section[role="tabpanel"] {
+  border: 1px solid var(--bs-dark-text-emphasis);
+}
+
+.tabGroup a[role="tab"]:focus,
+.tabGroup a[role="tab"] {
+  color: rgba(255, 255, 255, 0.55);
+  border-bottom: 0px;
+  outline: none;
+}
+
+.tabGroup a[role="tab"]:hover {
+  color: rgba(255, 255, 255, 0.75);
+  border-bottom: 2px solid #fff;
+  outline: none;
+}
+
+.tabGroup a[role="tab"][aria-selected="true"]:hover,
+.tabGroup a[role="tab"][aria-selected="true"]:focus,
+.tabGroup a[role="tab"][aria-selected="true"] {
+  color: rgba(255, 255, 255, 1);
+  border-bottom: 2px solid #fff;
+  outline: none;
+}
+
+pre {
+  background-color: #191919;
+  border: 1px solid var(--bs-border-color);
+  border-radius: 8px;
+  padding: 12px;
+}
+
+pre,
+code,
+code > span {
+  font-family: var(--bs-font-monospace);
+}
+
+code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  background-color: #191919;
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.alert-info h5:before {
+  content: "\f431";
+  font-family:bootstrap-icons!important;
+  font-style:normal;
+  font-weight:400!important;
+  font-variant:normal;
+}
+
+.alert-warning h5:before {
+  content: "\f33b";
+  font-family:bootstrap-icons!important;
+  font-style:normal;
+  font-weight:400!important;
+  font-variant:normal;
+}
+
+.alert-warning h5:before {
+  content: "\f33b";
+  font-family:bootstrap-icons!important;
+  font-style:normal;
+  font-weight:400!important;
+  font-variant:normal;
+}
+
+.alert-danger h5:before {
+  content: "\f627";
+  font-family:bootstrap-icons!important;
+  font-style:normal;
+  font-weight:400!important;
+  font-variant:normal;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+      position: fixed !important;
+  }
+
+  .article {
+      margin-top: 0px !important;
+  }
+
+  .sidenav {
+      padding: 0px !important;
+  }
+}
