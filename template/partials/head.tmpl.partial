@@ -22,10 +22,10 @@
     {{#_description}}<meta name="description" content="{{_description}}">{{/_description}}
     {{#description}}<meta name="description" content="{{description}}">{{/description}}
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/styles/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/styles/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/styles/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/styles/favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{_rel}}styles/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{_rel}}styles/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{_rel}}styles/favicon/favicon-16x16.png">
+    <link rel="manifest" href="{{_rel}}styles/favicon/site.webmanifest">
 
     <!--
       <link rel="stylesheet" href="{{_rel}}styles/docfx.vendor.min.css">
