@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-md navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="/">
-            <img alt="DevToys logo" class="logo-image" height="32" src="/styles/images/logo.svg" width="32">
+            <img alt="DevToys logo" class="logo-image" height="32" src="{{_rel}}/styles/images/logo.svg" width="32">
             DevToys
         </a>
 
