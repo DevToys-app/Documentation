@@ -70,10 +70,20 @@ header {
   padding-left: var(--bs-navbar-nav-link-padding-x);
 }
 
+#wrapper {
+  flex-direction: column;
+  display: flex;
+}
+
+.body-content {
+  flex: 1 0 auto;
+}
+
 footer {
   border-top: 1px solid var(--bs-dark-text-emphasis);
   background-color: #202020;
   position: relative;
+  flex-shrink: 0;
 }
 
 .top-space {
