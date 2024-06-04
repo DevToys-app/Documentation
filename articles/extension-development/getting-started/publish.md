@@ -35,7 +35,17 @@ To create an extension package, start by editing the `*.csproj` file you created
     <PackageTags>devtoys-app</PackageTags>
   </PropertyGroup>
 
-  <!-- This makes sure to include dependencies of the project into the NuGet package -->
+  <ItemGroup>
+    <None Include="$(RepoRoot)LICENSE.md" Link="docs\LICENSE.md" Pack="true" PackagePath="\" />
+    <None Include="$(RepoRoot)README.md" Link="docs\README.md" Pack="true" PackagePath="\" />
+
+    <!-- This makes sure to include platform-specific binaries into the NuGet package, if any-->
+    <None Include="runtimes\**" Pack="true" PackagePath="\lib\net8.0\runtimes\">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- This makes sure to include dependencies of the project into the NuGet package, if any -->
   <Target Name="IncludeAllFilesInTargetDir" BeforeTargets="_GetPackageFiles">
     <ItemGroup>
       <None Include="$(OutputPath)\**">
@@ -48,6 +58,26 @@ To create an extension package, start by editing the `*.csproj` file you created
 ```
 
 These project properties will allow the creation of the nuspec file automatically. You can then use the [dotnet pack](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-pack) command to generate a `.nupkg` file, which is a NuGet Package.
+
+### Platform-specific binaries
+
+Sometimes, an extension needs some resources that are built for a specific operating system. If properly configured, DevToys can automatically extract binaries matching the operating system on which the app is running. To do so, simply place platform-specific files into a folder `runtimes/[operating-system]`.
+
+Here are the supported folder names:
+- runtimes/linux/
+- runtimes/linux-x86/
+- runtimes/linux-x64/
+- runtimes/linux-arm64/
+- runtimes/osx/
+- runtimes/osx-x86/
+- runtimes/osx-x64/
+- runtimes/osx-arm64/
+- runtimes/win/
+- runtimes/win-x86/
+- runtimes/win-x64/
+- runtimes/win-arm64/
+
+**Example:** If a user installs an extension on Windows x64, only files from `runtimes/win/` and `runtimes/win-x64/` will be installed on the user machine.
 
 ## Publishing an extension
 

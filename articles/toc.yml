@@ -102,7 +102,7 @@
         href: extension-development/guidelines/do-and-dont.md
 - name: Administrating DevToys
   items:
-  - name: Installation
-    href: sysadmin/installation.md
+  - name: Logs
+    href: sysadmin/logs.md
   - name: Extension Management
     href: sysadmin/extension-management.md
