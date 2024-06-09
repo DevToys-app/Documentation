@@ -630,6 +630,10 @@ body .toc{
 }
 .article img {
   max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 24px auto;
+  border-radius: 10px;
 }
 .sideaffix {
   margin-top: 50px;
