@@ -64,7 +64,7 @@ While additional components can be added to extend features like DevToys's Smart
 
 A RESX file is an XML-based resource file for .NET, typically containing localized strings displayed to the user. For this sample extension, we will create a resource file with the following entries:
 - **ShortDisplayTitle**: The tool's title, displayed in the DevToys sidebar.
-- **LongDisplayTtite**: The tool's title, displayed at the top of the screen when the user navigates to the tool.
+- **LongDisplayTitle**: The tool's title, displayed at the top of the screen when the user navigates to the tool.
 - **AccessibleName**: A descriptive name of the tool, useful for users who rely on assistive technology such as screen readers.
 - **Description**: A brief description of the tool, displayed in the grid of tools on the DevToys main page.
 - **HelloWorldLabel**: A “hello world” text to be displayed in the tool's UI.
