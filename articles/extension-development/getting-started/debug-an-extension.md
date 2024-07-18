@@ -10,26 +10,26 @@ Before you can debug your extension, there's a one-time configuration you need t
 1. In the **Properties** folder, create a new file named **launchSettings.json**.
 1. Paste the following JSON into this file:
    ```json
-    {
-      "$schema": "https://json.schemastore.org/launchsettings.json",
-      "profiles": {
-        "DevToys GUI": {
-          "commandName": "Executable",
-          "executablePath": "%DevToysGuiDebugEntryPoint%",
-          "environmentVariables": {
-            "EXTRAPLUGIN": "$(TargetDir)"
-          }
-        },
-        "DevToys CLI": {
-          "commandName": "Executable",
-          "executablePath": "%DevToysCliDebugEntryPoint%",
-          "commandLineArgs": "",
-          "environmentVariables": {
-            "EXTRAPLUGIN": "$(TargetDir)"
-          }
-        }
-      }
-    }
+   {
+     "$schema": "https://json.schemastore.org/launchsettings.json",
+     "profiles": {
+       "DevToys GUI": {
+         "commandName": "Executable",
+         "executablePath": "%DevToysGuiDebugEntryPoint%",
+         "environmentVariables": {
+           "EXTRAPLUGIN": "$(TargetDir)"
+         }
+       },
+       "DevToys CLI": {
+         "commandName": "Executable",
+         "executablePath": "%DevToysCliDebugEntryPoint%",
+         "commandLineArgs": "",
+         "environmentVariables": {
+           "EXTRAPLUGIN": "$(TargetDir)"
+         }
+       }
+     }
+   }
    ```
 
 Assuming you've correctly set the `DevToysGuiDebugEntryPoint` and `DevToysCliDebugEntryPoint` environment variable as per the [Setup](setup.md) steps, this JSON configuration will enable automatic startup of **DevToys** or **DevToys CLI** and pass your extension as an argument.
