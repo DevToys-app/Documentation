@@ -27,7 +27,7 @@ internal sealed class MyGuiTool : IGuiTool
 {
     private static readonly SettingDefinition<bool> mySetting // Define a setting.
         = new(
-            name: $"{nameof(MyGuiTool)}.{nameof(mySetting)}", // Unique name for the setting. Use the tool name to avoid conflicts.
+            name: $"{nameof(mySetting)}",                     // Unique name for the setting.
             defaultValue: true);                              // Default value for the setting.
 
     [Import] // Import the settings provider.
