@@ -100,7 +100,7 @@
         href: extension-development/guidelines/use-files.md
       - name: Do & Don't
         href: extension-development/guidelines/do-and-dont.md
-- name: Administrating DevToys
+- name: Administering DevToys
   items:
   - name: Logs
     href: sysadmin/logs.md
