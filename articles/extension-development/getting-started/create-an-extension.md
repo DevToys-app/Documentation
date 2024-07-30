@@ -218,7 +218,10 @@ internal sealed class MyResourceAssemblyIdentifier : IResourceAssemblyIdentifier
 ```
 
 This class will be used by DevToys to identify the assembly containing the resource file with localized strings.
-The `Export` attribute is part of the .NET [Managed Extensibility Framework (MEF)](https://learn.microsoft.com/en-us/dotnet/framework/mef/). This is an important part of DevToys extensibility. It has a significant impact on how an extenion should be published. We will explore how in a later section.
+The `Export` attribute is part of the .NET [Managed Extensibility Framework (MEF)](https://learn.microsoft.com/en-us/dotnet/framework/mef/). This is an important part of DevToys extensibility. It has a significant impact on how an extension should be published. We will explore how in a later section.
+
+>[!IMPORTANT]
+> Please provide a fairly unique value for the `Name` attribute. `MyResourceAssemblyIdentifier` or `ResourceAssemblyIdentifier` may be already used by other extensions and cause some internal conflicts in DevToys, causing performance degradation. Instead, prefer a more unique name that corresponds to your extension, for example, `MyAwesomeJsonToYamlDevToysExtensionResourceAssemblyIdentifier`.
 
 ## Create a tool with a UI
 
