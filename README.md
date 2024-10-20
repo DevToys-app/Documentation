@@ -2,7 +2,7 @@ This is the documentation website of DevToys
 
 # Setup this repository
 
-Install [.NET SDK 6.0](https://dotnet.microsoft.com/en-us/download) or higher, then open a command line prompt and enter the following command:
+Install [.NET SDK 8.0](https://dotnet.microsoft.com/en-us/download) or higher, then open a command line prompt and enter the following command:
 ```powershell
 > git submodule update --init --recursive
 > git submodule update --remote --merge

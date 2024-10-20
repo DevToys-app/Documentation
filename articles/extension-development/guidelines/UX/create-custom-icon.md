@@ -4,7 +4,9 @@ In DevToys, the icon of each tool and group is a glyph coming from a font. Each 
 
 ## Create a custom font
 
-DevToys comes with the font [FluentSystemIcons](https://github.com/microsoft/fluentui-system-icons) and can be used by every tools. If you would like to create a custom icon font instead of using a glyph from `FluentSystemIcons`, we recommend you to use the following tools:
+DevToys comes with the font [FluentSystemIcons](https://github.com/microsoft/fluentui-system-icons) and can be used by every tools. You can explore the list of icons available in this font using the DevToys extension [Fluent Icon Finder](https://github.com/pierre3/DevToys.Extensions.FluentIconFinder).
+
+If you would like to create a custom icon font instead of using a glyph from `FluentSystemIcons`, we recommend you to use the following tools:
 - [Figma](https://www.figma.com/)
 - [Inkscape](https://inkscape.org/)
 - [FontForge](https://fontforge.org/)
