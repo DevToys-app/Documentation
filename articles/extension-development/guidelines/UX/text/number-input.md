@@ -23,7 +23,7 @@ namespace MyProject;
     GroupName = "My Group")]
 internal sealed class MyGuiTool : IGuiTool
 {
-    private readonly IUIMultiLineTextInput _multiLineTextInput = MultilineTextInput();
+    private readonly IUIMultiLineTextInput _multiLineTextInput = MultiLineTextInput();
 
     public UIToolView View
         => new UIToolView(
