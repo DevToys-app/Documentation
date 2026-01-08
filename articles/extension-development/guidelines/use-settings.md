@@ -78,7 +78,7 @@ For more complex objects, you can save and restore them by providing methods to 
 
 ### DevToys CLI
 
-Settings are stored in a file named `Cache/settings.ini` in the folder where DevToys CLI is installed. in the folder where DevToys CLI is installed. If the app is in a folder that requires admin rights, such as `Program Files` on Windows, the app should be run with administrator privileges to persist settings.
+Settings are stored in a file named `Cache/settings.ini` in the folder where DevToys CLI is installed. If the app is in a folder that requires admin rights, such as `Program Files` on Windows, the app should be run with administrator privileges to persist settings.
 
 ### DevToys GUI
 
