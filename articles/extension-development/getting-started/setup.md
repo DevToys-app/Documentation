@@ -24,7 +24,7 @@ Follow these steps:
 
 #### Selecting Your Editor
 
-We recommend you use [**Visual Studio 2022**](https://visualstudio.microsoft.com/#vs-section) for its robust development capabilities for C# and .NET. This IDE also offers a free tier. However, if you are already familiar with [**JetBrains Rider**](https://www.jetbrains.com/rider/), it is an excellent alternative. Finally, [**Visual Studio Code**](https://visualstudio.microsoft.com/#vscode-section) is another option, particularly if you prefer a more lightweight text editor.
+We recommend you use [**Visual Studio 2026**](https://visualstudio.microsoft.com/#vs-section) for its robust development capabilities for C# and .NET. This IDE also offers a free tier. However, if you are already familiar with [**JetBrains Rider**](https://www.jetbrains.com/rider/), it is an excellent alternative. Finally, [**Visual Studio Code**](https://visualstudio.microsoft.com/#vscode-section) is another option, particularly if you prefer a more lightweight text editor.
 
 - For **Visual Studio** users, please select `.NET desktop development` workload during installation.
 - For **Visual Studio Code** users, please install the [**C# DevKit**](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit) and [**ResX Editor**](https://marketplace.visualstudio.com/items?itemName=DominicVonk.vscode-resx-editor) extensions.
